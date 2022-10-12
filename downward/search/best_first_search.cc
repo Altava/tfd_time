@@ -381,6 +381,8 @@ bool BestFirstSearchEngine::check_goal()
         PlanTrace path;
         closed_list.trace_path(current_state, plan, path);
         set_plan(plan);
+        time_t current_time = time(NULL);
+        cout << "Found plan after " << (current_time - start_time) << " sec." << endl;
         set_path(path);
         return true;
     } else {
